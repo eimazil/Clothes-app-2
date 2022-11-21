@@ -10,37 +10,26 @@ function Line({ order }) {
   return (
     <li className="list-group-item">
       <div className="admin_orders_home">
-        <div className="admin_orders_line">
+        <div className="d-flex flex-row gap-5 flex-wrap ">
           <div>
-            <div>{order.title}</div>
+            <div className="width-200">{order.title}</div>
             {order.image ? (
-              <div>
-                <img
-                  className="admin_orders_img"
-                  src={order.image}
-                  alt={order.title}
-                ></img>
-              </div>
+              <img
+                className="width-200"
+                src={order.image}
+                alt={order.title}
+              ></img>
             ) : (
-              <span className="red-image">No image</span>
+              <span className="no-image">No image</span>
             )}
           </div>
-          <div className="home__content__info_text">
-            <div className="home__content__info_text_line">
-              Color: {order.color}{" "}
-            </div>
-            <div className="home__content__info_text_line">
-              Size: {order.size}{" "}
-            </div>
-            <div className="home__content__info_text_line">
-              Price: {order.price} Eur{" "}
-            </div>
-            <div className="home__content__info_text_line">
-              OrderId: {order.id}
-            </div>
+          <div>
+            <div>Color: {order.color} </div>
+            <div>Size: {order.size} </div>
+            <div>Price: {order.price} Eur </div>
+            <div>OrderId: {order.id}</div>
             <div
               style={{ color: order.order_state === 1 ? "green" : "crimson" }}
-              className="home__content__info_text_line"
             >
               Order status:{" "}
               {order.order_state === 0 ? "Unapproved" : "Approved"}

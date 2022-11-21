@@ -97,30 +97,6 @@
   }
 }
 
-// Admin orders
-
-.admin_orders_line {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.admin_orders_img {
+.width-200 {
   width: 200px;
-}
-
-.home__content__info_text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 10px;
-  width: 50%;
-}
-
-.home__content__info_text_line {
-  width: 100%;
-}
-
-.admin_orders_button {
-  align-self: flex-start;
 }

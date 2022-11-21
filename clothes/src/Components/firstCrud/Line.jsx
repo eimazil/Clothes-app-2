@@ -32,29 +32,26 @@ function Line({ clothe }) {
     <li className="list-group-item">
       <div className="home">
         <div className="home__content">
-          <div className="home__content__info">
-            <div>
+          <div className="">
+            <div className="width-200">
               <h2>{clothe.title}</h2>
               {clothe.image ? (
-                <div className="img-bin-home">
-                  <img src={clothe.image} alt={clothe.title}></img>
-                </div>
+                <img
+                  className="width-200"
+                  src={clothe.image}
+                  alt={clothe.title}
+                ></img>
               ) : (
-                <span className="red-image">No image</span>
+                <span className="no-image">No image</span>
               )}
             </div>
-            <div className="home__content__info_text">
-              <div className="home__content__info_text_line">
-                {clothe.type} season
-              </div>
-              <div className="home__content__info_text_line">
-                {clothe.price} Eur
-              </div>
-            </div>
           </div>
-
-          <div className="purchase-information">
-            <div className="home_purchase_color">
+          <div className="d-flex flex-column justify-content-center gap-2">
+            <div className="">{clothe.type} season</div>
+            <div className="">{clothe.price} Eur</div>
+          </div>
+          <div className="">
+            <div className="">
               <label className="form-label">Choose color</label>
               <select
                 className="form-select"
@@ -71,7 +68,7 @@ function Line({ clothe }) {
                 ))}
               </select>
             </div>
-            <div className="home_purchase_size">
+            <div className="">
               <label className="form-label">Choose size</label>
               <select
                 className="form-select"
@@ -105,48 +102,7 @@ function Line({ clothe }) {
             </button>
           </div>
         </div>
-
-        {/* <div className="home__content__rating">
-            <h2>{movie[1][0].rating ?? "no rating"}</h2>
-            <select value={rate} onChange={(e) => setRate(e.target.value)}>
-              {[...Array(10)].map((_, i) => (
-                <option key={i + 1} value={i + 1}>
-                  {i + 1}
-                </option>
-              ))}
-            </select>
-            <button
-              onClick={doRating}
-              type="button"
-              className="btn btn-outline-success m-3"
-            >
-              Rate
-            </button>
-          </div> */}
       </div>
-      {/* <div className="comments">
-        <ul className="list-group">
-          {movie[1]?.map((c) =>
-            c.cid !== null ? (
-              <li key={c.cid} className="list-group-item">
-                <p>{c.post}</p>
-              </li>
-            ) : null
-          )}
-        </ul>
-
-        <div className="mb-3">
-          <label className="form-label">Add comment</label>
-          <textarea
-            className="form-control"
-            value={post}
-            onChange={(e) => setPost(e.target.value)}
-          ></textarea>
-        </div>
-        <button onClick={add} type="button" className="btn btn-outline-success">
-          Add
-        </button>
-      </div> */}
     </li>
   );
 }
